@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dinesh ❤️ Anjana - Cosmic Destiny</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: radial-gradient(circle at top, #1a1a40, #000);
+            color: white;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .container {
+            margin-top: 80px;
+        }
+
+        #timer {
+            color: gold;
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 12px 25px;
+            font-size: 18px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            margin: 10px;
+        }
+
+        #yesBtn {
+            background: #ff4d6d;
+            color: white;
+        }
+
+        #noBtn {
+            background: gray;
+            color: white;
+            position: absolute;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>🌌 Cosmic Destiny 🌌</h1>
+    <h2>Dinesh ❤️ Anjana</h2>
+    <div id="timer">Time left: 40s</div>
+
+    <div id="questionBox">
+        <h2>Will you be my Valentine?</h2>
+        <button id="yesBtn" onclick="yesClicked()">Yes ❤️</button>
+        <button id="noBtn">No 💔</button>
+    </div>
+
+    <div id="result" class="hidden">
+        <h1>✨ She Said YES! ✨</h1>
+        <p>The universe approves this love story ❤️</p>
+    </div>
+</div>
+
+<script>
+
+let timeLeft = 40;
+let timer = document.getElementById("timer");
+
+setInterval(() => {
+    if(timeLeft > 0){
+        timeLeft--;
+        timer.innerHTML = "Time left: " + timeLeft + "s";
+    }
+}, 1000);
+
+function yesClicked() {
+    document.getElementById("questionBox").classList.add("hidden");
+    document.getElementById("result").classList.remove("hidden");
+}
+
+let noBtn = document.getElementById("noBtn");
+
+noBtn.addEventListener("mouseover", moveButton);
+noBtn.addEventListener("touchstart", moveButton);
+
+function moveButton() {
+    let x = Math.random() * (window.innerWidth - 100);
+    let y = Math.random() * (window.innerHeight - 50);
+    noBtn.style.left = x + "px";
+    noBtn.style.top = y + "px";
+}
+
+</script>
+
+</body>
+</html>
